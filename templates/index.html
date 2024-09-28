@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product data Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- Loading animation -->
+    <div id="loading">
+        <div class="spinner"></div>
+        <p>Mining your data, please wait...</p>
+    </div>
+
+   
+    <form method="POST" action="/scrape">
+        <h1>Scraped Product Data</h1>
+        <h3>Enter your source URL below to scrap its data!</h3>
+        <input type="text" name="url" placeholder="Enter URL" required>
+        <button type="submit">Scrape</button>
+    </form>
+    
+    <!-- Check if scraping was successful => not yet implimented -->
+    <!-- Check if products exist -->
+    {% if products %}
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Product number</th>
+                <th>Product Name</th>
+                <th>Price (GBP)</th>
+                <th>Price (USD)</th>
+                <th>Price (KES)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through each product -->
+            {% for product in products %}
+            <tr>
+                <td>{{ loop.index }}</td> <!-- Numbering each row -->
+
+                <td>{{ product['name'] }}</td>
+                <td>{{ product['price_gbp'] }}</td>
+                <td>{{ product['price_usd'] }}</td>
+                <td>{{ product['price_kes'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No products found.</p>
+    {% endif %}
+
+    <script>
+        // Show loading screen when page is loading
+        window.addEventListener('load', function() {
+            const loadingOverlay = document.getElementById('loading');
+            loadingOverlay.style.display = 'block'; // Show loading animation
+
+            setTimeout(function() {
+                loadingOverlay.style.display = 'none'; // Hide after 2 seconds
+            }, 2000); // Adjust this timing to the actual time it takes for your scraping process
+        });
+    </script>
+</body>
+</html>
