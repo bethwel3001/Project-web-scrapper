@@ -5,8 +5,21 @@ from scrapper import scrape_products
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def landing():
+    return render_template('landing.html')
+
+@app.route('/scrap')
+def scrap():
     return render_template('index.html')
+
+@app.route('/know-more')
+def know_more():
+    return render_template('know_more.html')
+
+
+# @app.route('/')
+# def index():
+#     return render_template('index.html')
 
 @app.route('/scrape', methods=['POST'])
 def scrape():

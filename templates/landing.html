@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraper Project Landing Page</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Styling for the landing page -->
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Prevents scrolling */
+            position: relative; /* Allows absolute positioning of children */
+            background-color: #88a1b9;/* Set a dark background */
+        }
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+            animation: fadeInDown 1s ease;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 300;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Button styles */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        /* Scrap button */
+        .scrap-btn {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        /* Know more button */
+        .know-more-btn {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        /* Button hover effects */
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .button {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+
+            /* Responsive styles */
+            @media (max-width: 768px) {
+            h1 {
+                font-size: 24px; /* Smaller font size for headings */
+            }
+            .btn {
+                padding: 15px 10px; /* Increase padding for buttons */
+                font-size: 14px; /* Smaller font size for buttons */
+            }
+        }
+        /* Animation keyframes */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Floating Font Awesome Icons */
+        /* Floating Icons */
+        .floating {
+            position: absolute;
+            font-size: 30px;
+            animation: float 5s infinite ease-in-out;
+            z-index: 1; /* Below buttons and heading */
+            color: #c40101; 
+            /* Color for icons */
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Binary numbers */
+        .binary {
+            position: absolute;
+            color: green;
+            font-size: 20px;
+            white-space: nowrap;
+            z-index: 1; /* Below buttons and heading */
+            opacity: 0; /* Start invisible */
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+          /* Footer Styles */
+        footer {
+            background-color: #6aacd8; /* Ensure contrast */
+            /* color: white; */
+            text-align: center;
+            padding: 20px 0; /* Increase padding for better visibility */
+            position: absolute; /* Position at the bottom */
+            bottom: 0;
+            /* width: 100%; */
+            display: flex;
+            justify-content: center; /* Center the icons */
+            gap: 20px; /* Space between icons */
+            /* z-index: 1000;  */
+            /* Ensure it is on top of the binary numbers */
+            border-radius: 40px;
+        }
+
+        footer a {
+            color: white;
+            font-size: 3rem; /* Increase font size for icons */
+            transition: color 0.3s;
+            padding: 10px; /* Add padding for better clickability */
+        }
+
+        footer a:hover {
+            transform: scale(1.2); /* Scale up on hover */
+        }
+
+        /* Icon Colors */
+        .linkedin:hover {
+            color: #3b5998; /* Facebook Blue */
+        }
+
+        .github:hover {
+            color: #333; /* GitHub Dark */
+        }
+
+        .website:hover {
+            color: #1e90ff; /* Dodger Blue */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Fundi Web Scraper</h1>
+        <p>Extract data from websites with ease.</p>
+        <h2><p>Where every insight and flactuation of data matters in your daily life</p></h2>
+        <div class="buttons">
+        <button class="button scrap-btn" onclick="window.location.href='/scrap'">Scrap Your Site</button>
+        <!-- <button class="button know-more-btn" onclick="window.location.href='know_more.html'">Know More</button> -->
+        <button class="button know-more-btn" onclick="window.location.href='/know-more'">Know More</button>
+
+        </div>
+           <!-- Floating Font Awesome Icons -->
+    <i class="fas fa-hammer floating" style="top: 20%; left: 10%;"></i>
+    <i class="fas fa-nail floating" style="top: 40%; right: 15%;"></i>
+    <i class="fas fa-hammer floating" style="top: 60%; left: 50%;"></i>
+    <i class="fas fa-nail floating" style="top: 80%; right: 25%;"></i>
+    </div>
+    <script>
+        // Function to generate random binary numbers
+        function generateBinary() {
+            const binaryNumber = Math.round(Math.random()).toString();
+            const binaryElement = document.createElement('div');
+            binaryElement.className = 'binary';
+            binaryElement.innerText = binaryNumber;
+
+            // Set random position
+            const randomX = Math.random() * window.innerWidth;
+            binaryElement.style.left = randomX + 'px';
+            binaryElement.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Random fall duration
+
+            document.body.appendChild(binaryElement);
+
+            // Remove binary number after it falls
+            setTimeout(() => {
+                binaryElement.remove();
+            }, 5000); // Time to match the fall animation
+        }
+
+        // Generate a binary number every 500ms
+        // removed it from 
+        setInterval(generateBinary, 250);
+    </script>
+        <footer>
+            <a href="https://www.linkedin.com/in/kiplagat-k-bethwel-1314912a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+
+            <a href="https://github.com/bethwel3001" target="_blank" class="github"><i class="fab fa-github"></i></a>
+            <a href="https://66f6f4a8c572d2ba147cec09--courageous-conkies-c9e4f1.netlify.app/" target="_blank" class="website"><i class="fas fa-globe"></i></a>
+        </footer>
+</body>
+</html>

@@ -6,30 +6,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product data Scraper</title>
+
+    <!-- stylesheet link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+     <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
+    <div class="loader" id="loader"></div>
+    
+    <div id="successMessage">Success!</div>
+
+    
+    <div class="binary" id="binaryContainer"></div>
 
     <!-- Loading animation -->
     <div id="loading">
         <div class="spinner"></div>
-        <p>Mining your data, please wait...</p>
+        <p>Mining your site data, please wait...</p>
     </div>
 
    
-    <form method="POST" action="/scrape">
-        <h1>Scraped Product Data</h1>
-        <h3>Enter your source URL below to scrap its data!</h3>
-        <input type="text" name="url" placeholder="Enter URL" required>
-        <button type="submit">Scrape</button>
-    </form>
-    
+    <div class="scrap-section">
+
+        <form method="POST" action="/scrape">
+            <h1>Scraped Product Data</h1>
+            <h3>Enter your source URL below to scrap its data!</h3>
+            <input type="text" name="url" placeholder="Enter product website URL" required>
+            <button type="submit" id="scrap-btn">Scrape</button>
+            <button class="back-btn" onclick="window.location.href='/'">Back to Fundi</button>
+            <button class="button know-more-btn" onclick="window.location.href='/know-more'">Know More</button>
+            
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+         
+        </form>
+        <!-- <button id="scrap-btn">Scrap</button> -->     
+    </div>  
     <!-- Check if scraping was successful => not yet implimented -->
     <!-- Check if products exist -->
     {% if products %}
     <table border="1" cellpadding="10" cellspacing="0">
         <thead>
-            <tr>
+            <tr class="data-row">
                 <th>Product number</th>
                 <th>Product Name</th>
                 <th>Price (GBP)</th>
@@ -40,7 +65,7 @@
         <tbody>
             <!-- Loop through each product -->
             {% for product in products %}
-            <tr>
+            <tr class="data-row">
                 <td>{{ loop.index }}</td> <!-- Numbering each row -->
 
                 <td>{{ product['name'] }}</td>
@@ -65,6 +90,62 @@
                 loadingOverlay.style.display = 'none'; // Hide after 2 seconds
             }, 2000); // Adjust this timing to the actual time it takes for your scraping process
         });
+    </script>
+
+<script>
+    function showLoader() {
+        const loader = document.getElementById('loader');
+        const successMessage = document.getElementById('successMessage');
+        loader.style.display = 'block';
+
+        // Simulate loading for 3 seconds (replace this with your scraping function)
+        setTimeout(() => {
+            loader.style.display = 'none';
+            successMessage.style.display = 'block';
+
+            // Hide success message after 30 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 30000); // 30 seconds
+        }, 3000); // Loading duration
+    }
+
+    function createBinaryNumbers() {
+        const binaryContainer = document.getElementById('binaryContainer');
+        for (let i = 0; i < 50; i++) {
+            const span = document.createElement('span');
+            span.textContent = Math.random() < 0.5 ? '0' : '1';
+            span.style.left = `${Math.random() * 100}vw`;
+            span.style.animationDuration = `${Math.random() * 2 + 3}s`; // Random speed
+            span.style.fontSize = `${Math.random() * 20 + 10}px`; // Random size
+            binaryContainer.appendChild(span);
+        }
+    }
+
+    // Start the loader and binary numbers
+    window.onload = function() {
+        showLoader();
+        createBinaryNumbers();
+    };
+</script>
+<script>// Display the success message for 5 seconds and then remove it
+    document.addEventListener('DOMContentLoaded', function() {
+        const successMessage = document.getElementById('successMessage');
+        successMessage.style.display = 'block';
+    
+        // Make the success message disappear after 5 seconds
+        setTimeout(function() {
+            successMessage.style.display = 'none';
+        }, 5000);
+    });
+    
+    // Animate data rows when they appear
+    const dataRows = document.querySelectorAll('.data-row');
+    dataRows.forEach((row, index) => {
+        setTimeout(() => {
+            row.style.opacity = 1;
+        }, index * 200); // Slight delay for staggered effect
+    });
     </script>
 </body>
 </html>
