@@ -1,14 +1,17 @@
 Web Scraper
 Overview
 This project is a simple web scraper built in Python that extracts product details from a specified e-commerce website. The scraper fetches product names and prices, converts the prices from GBP to USD and KES, and stores the information in a CSV file.
+![image](https://github.com/user-attachments/assets/4e286da7-ccd3-40e1-8797-fbdd25158ff3)
 
 Features
 Scrapes product information from a given URL.
+For example https://www.jumia.co.ke/televisions/
 Parses HTML content to extract product names and prices.
 Converts prices from GBP to USD and KES.
 Saves the scraped data into a CSV file.
 Requirements
 To run this project, you will need the following Python libraries:
+![image](https://github.com/user-attachments/assets/e8165e84-3f1b-4c99-8f53-0b095bf9da1b)
 
 requests
 BeautifulSoup (from bs4)
