@@ -36,7 +36,7 @@ Example
 Here is a simple example of how to use the scraper:
 from scraper import scrape_products
 
-url = "https://example.com/products"  # Replace with your target URL
+url = " # Replace with your target URL" 
 products = scrape_products(url)
 print(products)  # Display the scraped product data
 
