@@ -16,6 +16,7 @@ To run this project, you will need the following Python libraries:
 requests
 BeautifulSoup (from bs4)
 You can install the required libraries using pip:
+![image](https://github.com/user-attachments/assets/4bb6d4ef-cec3-41a9-b611-44420e285a80)
 
 pip install requests beautifulsoup4
 
