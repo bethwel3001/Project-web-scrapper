@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know More</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #879db1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .back-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background-color: #2980b9;
+        }
+         /* Floating Font Awesome Icons */
+        
+
+         /* Feature Boxes */
+         .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 0 auto;
+        }
+
+        .feature-box {
+            position: relative;
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Explanation Text */
+        .feature-box .explanation {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, bottom 0.3s ease;
+            width: 150px;
+        }
+
+        .feature-box:hover .explanation {
+            opacity: 1;
+            visibility: visible;
+            bottom: 10px;
+        }
+
+        /* Blur effect */
+        .feature-box:not(:hover) {
+            filter: blur(0);
+            transition: filter 0.3s ease;
+        }
+
+        .features:hover .feature-box:not(:hover) {
+            filter: blur(3px);
+        }
+
+        /* Media query for small screens */
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-box {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Animation */
+        .feature-box {
+            opacity: 0;
+            animation: popIn 0.5s ease forwards;
+        }
+
+        .feature-box:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .feature-box:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .feature-box:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .feature-box:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        /* Contact Form */
+         /* Contact form */
+         .contact-form {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #a87e7e;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            position: relative;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+
+        .send-btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .send-btn:hover {
+            background-color: #2ecc71;
+        }
+
+        /* Binary number animation */
+        .binary-container {
+            position: fixed; /* Change from absolute to fixed to cover entire viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* Ensure it covers the entire viewport height */
+            z-index: 9999; /* Ensure binary numbers are in front of everything */
+            overflow: hidden;
+            pointer-events: none; /* Disable pointer events */
+        }
+
+        .binary-number {
+            position: absolute;
+            color: green;
+            font-size: 20px;
+            font-family: monospace;
+            opacity: 0.7;
+            animation: fall linear infinite;
+            pointer-events: none; /* Disable pointer events */
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh); /* Binary numbers will cover the entire height */
+            }
+        }
+        /* Footer Styles */
+        footer {
+            /* background-color: #6aacd8;  */ /* Ensure contrast */
+            /* color: white; */
+            text-align: center;
+            padding: 20px 0; /* Increase padding for better visibility */
+            /* position: absolute;  *//* Position at the bottom */
+            /* bottom: 0; *//* width: 100%; */
+            display: flex;
+            justify-content: center; /* Center the icons */
+            gap: 20px; /* Space between icons */
+            /* z-index: 1000;  *//* Ensure it is on top of the binary numbers */
+            border-radius: 40px;
+        }
+
+        footer a {
+            color: white;
+            font-size: 3rem; /* Increase font size for icons */
+            transition: color 0.3s;
+            padding: 10px; /* Add padding for better clickability */
+        }
+
+        footer a:hover {
+            transform: scale(1.2); /* Scale up on hover */
+        }
+
+        /* Icon Colors */
+        .linkedin:hover {
+            color: #3b5998; /* Facebook Blue */
+        }
+
+        .github:hover {
+            color: #333; /* GitHub Dark */
+        }
+
+        .website:hover {
+            color: #1e90ff; /* Dodger Blue */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>About Fundi Web Scraper</h1>
+    <p>
+        This project is a simple web scraper that extracts product details from websites and outputs them in a structured format.
+        You can scrape prices, product names, and more from e-commerce platforms. Our tool converts the scraped data into a table
+        for easy viewing and saves it in various formats for analysis.
+    </p>
+
+    <p>
+        It's perfect for anyone looking to analyze pricing trends or gather data for research.
+        Click below to go back to the main page.
+    </p>
+    <!-- Falling Binary Numbers Container -->
+    <div class="binary-container" id="binaryContainer"></div>
+
+
+      <h1>Key Features</h1>
+
+      <div class="features">
+          <div class="feature-box">
+              Efficient
+              <div class="explanation">Highly optimized to reduce resource consumption.</div>
+          </div>
+          <div class="feature-box">
+              Fast
+              <div class="explanation">Quick data scraping with minimal delays.</div>
+          </div>
+          <div class="feature-box">
+              AI Integrated
+              <div class="explanation">Uses AI to enhance data extraction accuracy.</div>
+          </div>
+          <div class="feature-box">
+              Reliable
+              <div class="explanation">Stable and consistent performance over time.</div>
+          </div>
+      </div>
+      <h2>We would be glad to have your feedback!</h2>
+      </div>
+      <!-- Contact Form Section -->
+    <div class="contact-form">
+        <h2>Contact the developers</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button class="send-btn">Send Message</button>
+        </form>
+        <button class="back-btn" onclick="window.location.href='/'">Back to Fundi</button>
+        
+    </div>
+      <script>
+           // Generate falling binary numbers
+        const binaryContainer = document.getElementById('binaryContainer');
+        const totalNumbers = 100;
+
+        // Function to create a binary number and start animation
+        function createBinaryNumber() {
+            const binaryNumber = document.createElement('div');
+            binaryNumber.classList.add('binary-number');
+            binaryNumber.textContent = Math.random() > 0.5 ? '1' : '0';
+
+            // Random position and speed for the binary number
+            binaryNumber.style.left = Math.random() * 100 + 'vw';
+            binaryNumber.style.animationDuration = Math.random() * 3 + 4 + 's';
+            binaryNumber.style.fontSize = Math.random() * 10 + 15 + 'px';
+
+            binaryContainer.appendChild(binaryNumber);
+
+            // Remove the binary number after animation completes
+            setTimeout(() => {
+                binaryContainer.removeChild(binaryNumber);
+            }, 7000);
+        }
+
+        // Create multiple binary numbers at random intervals
+        setInterval(createBinaryNumber, 100);
+      </script>
+       <footer>
+        <a href="https://www.linkedin.com/in/kiplagat-k-bethwel-1314912a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+
+        <a href="https://github.com/bethwel3001" target="_blank" class="github"><i class="fab fa-github"></i></a>
+        <a href="https://66f6f4a8c572d2ba147cec09--courageous-conkies-c9e4f1.netlify.app/" target="_blank" class="website"><i class="fas fa-globe"></i></a>
+    </footer>
+</body>
+</html>
+
