@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-def parse_product_details(html_content):
+def parse_product_details(html_content, url):
     """Parse the HTML content and extract product details from Books to Scrape."""
     soup = BeautifulSoup(html_content, 'lxml')
     
