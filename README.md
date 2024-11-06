@@ -1,50 +1,82 @@
-Web Scraper
-Overview
-This project is a simple web scraper built in Python that extracts product details from a specified e-commerce website. The scraper fetches product names and prices, converts the prices from GBP to USD and KES, and stores the information in a CSV file.
-![image](https://github.com/user-attachments/assets/4e286da7-ccd3-40e1-8797-fbdd25158ff3)
+# Web Scraper Project
+## Overview
+This project is a Python-based web scraper that extracts data from various websites, processes the content, and outputs it in a structured format. It is ideal for data analysis, market research, and gathering product information.
 
-Features
-Scrapes product information from a given URL.
-For example https://www.jumia.co.ke/televisions/
-Parses HTML content to extract product names and prices.
-Converts prices from GBP to USD and KES.
-Saves the scraped data into a CSV file.
-Requirements
-To run this project, you will need the following Python libraries:
-![image](https://github.com/user-attachments/assets/e8165e84-3f1b-4c99-8f53-0b095bf9da1b)
+## Programming Languages and Frameworks Used
+- **Python**: Core programming language for developing the scraper and backend logic.
+- **HTML/CSS**: For the frontend web pages.
+- **JavaScript**: Used for client-side interactivity.
+- **Flask**: Backend framework for handling web requests and serving pages.
 
-requests
-BeautifulSoup (from bs4)
-You can install the required libraries using pip:
-![image](https://github.com/user-attachments/assets/4bb6d4ef-cec3-41a9-b611-44420e285a80)
+## Features
+- **Data Mining from Any Website**: Extracts and displays product and content information from provided URLs.
+- **User-Friendly Interface**: Allows users to input URLs and view results directly on the page.
+- **Responsive Design**: Optimized for various screen sizes and devices.
+- **Loading Animations**: Provides visual feedback during data scraping.
+- **Success/Error Alerts**: Alerts users about the status of their data requests.
 
-pip install requests beautifulsoup4
+## Software Requirements
+- **Visual Studio Code (VS Code)**: A code editor for development.
+- **Git**: Version control to manage code changes.
+- **GitHub**: For hosting the project repository.
+- **Python**: The main programming language for building the project.
 
-Project Structure
-webscraper/
-│
-├── app.py          # Flask app for future frontend integration
-├── scraper.py      # Main scraper logic
-├── parser.py       # Parses HTML to extract product details
-└── output.csv      # Output CSV file for scraped data (created upon running the scraper)
+### Installation Links
+- [Download Visual Studio Code](https://code.visualstudio.com/download)
+- [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Sign up for GitHub](https://github.com/)
+- [Install Python](https://www.python.org/downloads/)
 
-Usage
-1.Set the Target URL: Open scraper.py and set the url variable to the target e-commerce site you want to scrape. Make sure to adjust the selectors in parser.py according to the website's structure.
+## Python Libraries Required
+- **Flask**: `pip install flask`
+- **Requests**: `pip install requests`
+- **Beautiful Soup 4**: `pip install beautifulsoup4`
 
-2.Run the Scraper: Execute the following command in your terminal:
-python scraper.py
+### Installation Commands
+Run the following commands in your terminal or command prompt to install the required Python libraries:
+```bash
+pip install flask
+pip install requests
+pip install beautifulsoup4
 
-3.Check the Output: After running the scraper, you should find an output.csv file in the project directory containing the scraped product information.
+```
+## How to Get This Project
+# Step-by-Step Guide
+1. Clone the Repository: Open your terminal and run:
+`git clone https://github.com/bethwel3001/web-scraper-project.git`
+2. Navigate to the Project Directory:
+`cd web-scraper-project`
+3. Set Up a Virtual Environment (Recommended):
+`python -m venv venv`
+`source venv/bin/activate` (On Windows: `venv\Scripts\activate`)
+4. Install Dependencies:
+`pip install -r requirements.txt`
+5. Run the Flask App: Start the app with:
+`flask run`
 
-Example
-Here is a simple example of how to use the scraper:
-from scraper import scrape_products
+## Features
+- *User Input for Any URL:* Enter URLs to scrape content from various sites.
+- *nteractive UI:* A simple form for input and data display.
+- *Success Alerts:* Displays 'Success' with an animation after scraping.
+- *Error Handling:* Informs users if data cannot be fetched or processed.
+- *Data Output Table:* Presents scraped data in a neat table format.
+- *Animations and Effects:* Visual feedback when data is loading or processed.
 
-url = " # Replace with your target URL" 
-products = scrape_products(url)
-print(products)  # Display the scraped product data
+## Contributing
+Contributions are welcome! Here’s how you can contribute:
 
-Notes
-Be sure to check the website's robots.txt file to ensure that scraping is allowed.
-Adjust the scraping logic in parser.py based on the actual HTML structure of the target website.
-This scraper is designed for educational purposes and may require modifications for production use.
+1. Fork the project repository.
+2. Create a new branch (git checkout -b feature/YourFeature).
+3. Commit your changes (git commit -m 'Add a new feature').
+4. Push the branch (git push origin feature/YourFeature).
+5. Open a pull request.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+## Contact
+For questions, issues, or feedback:
+
+Your Name: Dev. Bethwel Kiplangat
+Email: kiplagatbethwelk@gmail.com
+GitHub: bethwel3001
