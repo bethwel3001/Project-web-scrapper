@@ -1,6 +1,9 @@
-# Web Scraper Project
+# Fundi web Scrapper:
+![image](https://github.com/user-attachments/assets/1fecbbc3-ea85-411d-9e48-16a452523036)
+
 ## Overview
 This project is a Python-based web scraper that extracts data from various websites, processes the content, and outputs it in a structured format. It is ideal for data analysis, market research, and gathering product information.
+![image](https://github.com/user-attachments/assets/fa423236-24ec-411a-862f-6f2ddb8791db)
 
 ## Programming Languages and Frameworks Used
 - **Python**: Core programming language for developing the scraper and backend logic.
@@ -62,8 +65,12 @@ pip install beautifulsoup4
 - *Data Output Table:* Presents scraped data in a neat table format.
 - *Animations and Effects:* Visual feedback when data is loading or processed.
 
+- *In action*
+  ![image](https://github.com/user-attachments/assets/febe1e3f-05b9-4c5b-883d-372f50c2688e)
+
 ## Contributing
 Contributions are welcome! Here’s how you can contribute:
+![image](https://github.com/user-attachments/assets/782c4555-2288-4680-8205-eeb13a8571f7)
 
 1. Fork the project repository.
 2. Create a new branch (git checkout -b feature/YourFeature).
