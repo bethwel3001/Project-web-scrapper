@@ -77,6 +77,6 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 ## Contact
 For questions, issues, or feedback:
 
-Your Name: Dev. Bethwel Kiplangat
-Email: kiplagatbethwelk@gmail.com
-GitHub: bethwel3001
+- *Name:* Dev. Bethwel Kiplangat
+- *Email:* kiplagatbethwelk@gmail.com
+- *GitHub:* bethwel3001
